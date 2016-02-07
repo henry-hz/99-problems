@@ -7,7 +7,7 @@
 //     def last[A](l: List[A]): A = ...
 // The `[A]` allows us to handle lists of any type.
 
-object 01 {
+object Problem01 extends App{
   // There are several ways to solve this problem.  If we use builtins, it's very
   // easy.
   def lastBuiltin[A](ls: List[A]): A = ls.last
@@ -19,5 +19,10 @@ object 01 {
     case _ :: tail => lastRecursive(tail)
     case _         => throw new NoSuchElementException
   }
+
+  val list = List(1,2,3,4)
+  val result = lastRecursive(list)
+  println(result)
+
 }
 

@@ -1,7 +1,10 @@
 99-problems
 ===========
 
-Start [here](https://howistart.org/)
+A different approach to learn: comparing implementations in several languages. 
+
+Start [here](https://howistart.org/) for erlang and haskell, 
+and [here](http://www.scala-lang.org/documentation/getting-started.html) for scala. 
 If you like VI, install [this](https://github.com/begriffs/haskell-vim-now) and 
 add your custom plugins for scala and erlang. 
 If you don't like VI, probably, you should try it more :) 
@@ -15,11 +18,15 @@ Scala
 http://aperiodic.net/phil/scala/s-99/ 
 
 
-#### compile
+#### compile 
+As we use 'object', the main method is automatically generated, but if you use 
+standard non-sigleton 'class', you should define the main method to start. 
+Note that we need alphanumeric charachters in the object name. 
 
 ```
-scalac hello.scala 
-scala hello
+scalac 01.scala -d bin
+cd bin 
+scala Problem01
 ```
 
 Haskell

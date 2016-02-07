@@ -5,6 +5,10 @@
 # About this file: http://blog.erlware.org/universal-makefile-for-erlang-projects-that-use-rebar/ 
 #
 
+# =============================================================================
+# Usage: e.g.  make haskell p=01  , to compile problem 01
+# =============================================================================
+
 ERLFLAGS= -pa $(CURDIR)/.eunit -pa $(CURDIR)/ebin -pa $(CURDIR)/deps/*/ebin \
     -boot start_sasl \
     -boot sync \
@@ -40,7 +44,8 @@ all: deps compile dialyzer test
 # Rules to build the system
 # =============================================================================
 
-
+haskell:
+	ghc -o $(p)/bin/runme_haskell $(p)/*.hs -odir $(p)/bin -hidir $(p)/bin
 
 erlang:
 	erlc 	
@@ -83,5 +88,8 @@ pdf:
 clean:
 	- rm -rf $(CURDIR)/*/*.beam
 	- rm -rf $(CURDIR)/*/*.class
+	- rm -rf $(CURDIR)/*/*.hi
+	- rm -rf $(CURDIR)/*/*.hi
+	- rm -rf $(CURDIR)/*/bin/*
 
 
