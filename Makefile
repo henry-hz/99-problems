@@ -48,10 +48,14 @@ haskell:
 	ghc -o $(p)/bin/runme_haskell $(p)/*.hs -odir $(p)/bin -hidir $(p)/bin
 
 erlang:
-	erlc 	
+	erlc -o $(p)/bin $(p)/*.erl
+	erl -pa $(p)/bin
 
+# in scala you should have alphanumerics on the object name, but the file can be numbers.
 scala:
-	scalac
+	scalac -d $(p)/bin $(p)/*.scala
+	cd $(p)/bin
+	scala Problem$(p)
 
 doc:
 	$(REBAR) skip_deps=true doc
