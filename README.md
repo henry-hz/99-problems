@@ -55,7 +55,7 @@ Erlang
 
 
 #### resources
-https://github.com/mencattini/99Problems
+https://github.com/mencattini/99Problems  
 https://github.com/psholtz/99-Problems/blob/master/p99.erl  
 https://github.com/rlander/99erlang  
 https://github.com/chad/99problems_erlang  
